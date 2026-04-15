@@ -1,0 +1,59 @@
+@use 'constants';
+@use 'neumorphism';
+
+*:focus {
+  outline: 1px solid constants.$border-color;
+}
+
+button {
+  padding: 4px 16px;
+  border-radius: 8px;
+  background-color: constants.$bg-color;
+  @include neumorphism.neumorphic(6, 6, 8);
+
+  &:active:not(:disabled) {
+    @include neumorphism.neumorphic(2, 2, 4);
+  }
+
+  &:disabled {
+    box-shadow: unset;
+    opacity: 50%;
+  }
+}
+
+select {
+  appearance: none;
+
+  @include neumorphism.neumorphic_inset(6, 6, 8);
+  background-color: constants.$bg-color;
+  border-radius: 20px;
+
+  &:disabled {
+    @include neumorphism.neumorphic_inset(2, 2, 4);
+    opacity: 50%;
+  }
+}
+
+textarea {
+  @include neumorphism.neumorphic_inset(6, 6, 8);
+  background-color: constants.$bg-color;
+  border-radius: 20px;
+
+  &:disabled {
+    @include neumorphism.neumorphic_inset(2, 2, 4);
+    opacity: 50%;
+  }
+}
+
+@layer base {
+  input {
+    padding: 8px 16px;
+    border-radius: 16px;
+    @include neumorphism.neumorphic_inset(6, 6, 8);
+    background: constants.$bg-color;
+
+    &:active:not(:disabled) {
+      @include neumorphism.neumorphic(2, 2, 4);
+    }
+  }
+}

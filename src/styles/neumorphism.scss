@@ -1,0 +1,24 @@
+$neumorphic-upper-shadow: #1a1a1a;
+$neumorphic-lower-shadow: #292929;
+
+@mixin neumorphic($x, $y, $blur) {
+  box-shadow: #{$x}px #{$y}px #{$blur}px $neumorphic-lower-shadow,
+  #{-$x}px #{-$y}px #{$blur}px $neumorphic-upper-shadow;
+}
+
+@mixin neumorphic_inset($x, $y, $blur) {
+  box-shadow: inset #{$x}px #{$y}px #{$blur}px $neumorphic-lower-shadow,
+  inset #{-$x}px #{-$y}px #{$blur}px $neumorphic-upper-shadow;
+}
+
+.neu-up {
+  border-radius: 8px;
+  padding: 16px;
+  @include neumorphic(4, 2, 8);
+}
+
+.neu-down {
+  border-radius: 8px;
+  padding: 16px;
+  @include neumorphic_inset(4, 2, 8);
+}

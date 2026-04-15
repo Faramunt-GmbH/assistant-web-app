@@ -1,0 +1,8 @@
+{
+  "short_name": "Assistant",
+  "name": "Assistant Web App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

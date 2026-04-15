@@ -1,0 +1,26 @@
+@use 'styles/constants';
+@forward 'styles/loader';
+@forward 'styles/elements';
+@forward 'styles/neumorphism';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: constants.$bg-color;
+  color: constants.$text-color;
+
+  --bg-color: #{constants.$bg-color};
+  --text-color: #{constants.$text-color};
+  --border-color: #{constants.$border-color};
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  border-color: constants.$border-color;
+}
